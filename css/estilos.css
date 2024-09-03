@@ -1,0 +1,268 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container .sidebar img{
+    width: 100%;
+    margin-top: 5px;
+    
+}
+body{
+    background-color: burlywood;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.title h1{
+    padding: 20px 0;
+    text-align: center;
+    font-size: 2.9em;
+}
+.container{
+    background-color: white;
+    width: 90%;
+    max-width: 1000px;
+    margin: 1.6em auto;
+    display: grid;
+    gap: 1.6em;
+    grid-template-columns: repeat(5, 1fr);
+}
+.container > .header,
+.container > .content,
+.container > .sidebar,
+.container > .footer,
+.container > div{
+    background-color: white;
+    padding: 20px;
+    border: 1px solid black;
+
+}
+.container .header,
+.container .footer{
+    grid-column: 1/6;
+    background-color: brown;
+    color: white;
+}
+.container > .content{
+    grid-column: span 3;
+
+}
+.content > .article{
+    background-color: lightcoral;
+    padding: 20px;
+    margin-top: 5px;
+    color: white;
+}
+.content .article  h1,
+.content .article p{
+    padding: 10px;
+}
+.container > .sidebar{
+    grid-column: span 2;
+    padding: 40px;
+    margin-top: 30px;
+}
+.container >.sidebar {
+    grid-column: span 2;
+    background-color: lightcoral;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.container .sidebar p{
+    padding: 10px;
+    margin-left: 80px;
+}
+.container .relacionado {
+background-color: lightcoral;
+color: white;
+height: 180px;
+display: flex;
+align-items: center;
+text-align: center;
+width: 300px;
+margin: 10px;
+}
+.container .relacionado-container{
+    grid-column: 1/6;
+    display: flex;
+    justify-content: space-around;
+    border: none;
+}
+footer h4{
+    text-align: center;
+    background-color: brown;
+    color: white;
+    padding: 20px;
+    width: auto;
+    text-align: center;
+}
+
+
+.container .Tipos{
+    width: auto;
+    background-color: brown;
+    padding: 20px;
+    grid-column: 1/-1;
+    text-align: center; 
+    color: white;
+    font-size: 2em;
+
+}
+.relacionado ul{
+
+    padding: 60px;
+}
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    
+  }
+  nav li {
+    margin-right: 10%;
+   
+  }
+  nav a{
+    text-decoration: none;
+    color: white;
+  }
+  nav a:hover{
+    color: black;
+  }
+
+@media screen and (max-width: 768px) {
+    .header {
+        text-align: center;
+    }
+
+    .container .relacionado-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .container .content {
+        grid-column: 1 / -1;
+    }
+
+    .container .sidebar {
+        grid-column: 1 / -1;
+    }
+
+    .container .relacionado {
+        grid-column: 1 / -1;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .title h1 {
+        font-size: 1.5em;
+    }
+
+    .container .Tipos {
+        font-size: 1.5em;
+        padding: 10px;
+    }
+
+    .content > .article h1 {
+        font-size: 1.2em;
+    }
+
+    .container .sidebar p {
+        padding: 5px;
+    }
+
+    .container .sidebar img {
+        margin-top: 0;
+    }
+
+    footer h4 {
+        font-size: 0.9em;
+    }
+}
+
+.slider {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.slide img {
+    width: 100%;
+}
+
+
+.caption {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    color: white;
+    font-size: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+}
+
+
+input[type="radio"] {
+    display: none;
+}
+
+
+.nav {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+
+#slide1:checked ~ .slides {
+    transform: translateX(0%);
+}
+#slide2:checked ~ .slides {
+    transform: translateX(-100%);
+}
+#slide3:checked ~ .slides {
+    transform: translateX(-200%);
+}
+
+#slide1:checked ~ .nav label[for="slide1"] {
+    background-color: #717171;
+}
+#slide2:checked ~ .nav label[for="slide2"] {
+    background-color: #717171;
+}
+#slide3:checked ~ .nav label[for="slide3"] {
+    background-color: #717171;
+}
+
